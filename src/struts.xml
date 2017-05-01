@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="false" />
+
+	<package name="house" extends="struts-default" namespace="/">
+		
+		<!-- 配置首页访问的Action 
+		<action name="index" class="indexAction">
+			<result name="index">index.html</result>
+		</action>-->
+		
+		<!-- 配置用户模块的Action -->
+		<action name="user_*" class="com.house.user.action.UserAction" method="{1}">
+			<result name="registPage">/WEB-INF/jsp/regist.jsp</result>
+			<result name="input">/WEB-INF/jsp/regist.jsp</result>
+			<result name="login">./jsp/login.jsp</result>
+			<result name="login_error">./jsp/login.jsp</result>
+			<result name="login_success">./jsp/index.jsp</result>
+			<result name="checkcodeFail">/WEB-INF/jsp/regist.jsp</result>
+			<result name="quit" type="redirect">index.jsp</result>
+		</action>
+		
+	</package>
+</struts>    
